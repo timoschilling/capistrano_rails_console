@@ -1,10 +1,11 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'capistrano_rails_console'
 
 Gem::Specification.new do |gem|
   gem.name          = "capistrano_rails_console"
-  gem.version       = "0.1.0"
+  gem.version       = CapistranoRailsConsole::VERSION
   gem.authors       = ["Timo Schilling"]
   gem.email         = ["timo@schilling.io"]
   gem.description   = %q{Open a rails console the first app server.}
