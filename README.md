@@ -1,4 +1,4 @@
-# CapistranoRailsConsole
+# Capistrano Rails Console
 
 Open a rails console the first app server.
 
