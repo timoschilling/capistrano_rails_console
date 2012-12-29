@@ -16,6 +16,10 @@ Or install it yourself as:
 
     $ gem install capistrano_rails_console
 
+Require it in your Capfile or deploy.rb:
+
+    require "capistrano_rails_console/recipes"
+
 ## Usage
 
     $ cap rails:console
