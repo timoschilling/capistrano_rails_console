@@ -8,7 +8,7 @@ Capistrano::Configuration.instance(:must_exist).load do
 
       console_command = case defined?(Rails::VERSION::MAJOR) && Rails::VERSION::MAJOR
       when 2
-        "script/rails console #{rails_env}"
+        "./script/console #{rails_env}"
       else
         "rails console #{rails_env}"
       end
