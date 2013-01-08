@@ -1,4 +1,5 @@
 require "capistrano/configuration"
+require "capistrano_rails_console/rails"
 
 Capistrano::Configuration.instance(:must_exist).load do
   namespace :rails do
@@ -6,12 +7,7 @@ Capistrano::Configuration.instance(:must_exist).load do
     task :console, :roles => :app do
       hostname = find_servers_for_task(current_task).first
 
-      console_command = case defined?(Rails::VERSION::MAJOR) && Rails::VERSION::MAJOR
-      when 2
-        "./script/console #{rails_env}"
-      else
-        "rails console #{rails_env}"
-      end
+      console_command = CapistranoRailsConsole::Rails.console_command % rails_env
       exec "ssh -l #{user} #{hostname} -p #{port} -t 'cd #{current_path} && #{console_command}'"
     end
   end
