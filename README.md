@@ -24,6 +24,10 @@ Require it in your Capfile or deploy.rb:
 
     $ cap rails:console
 
+## Todo / Roadmap
+
+* use Capistrano API to run command, not build it by hand
+
 ## Contributing
 
 1. Fork it
