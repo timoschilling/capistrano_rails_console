@@ -1,3 +1,1 @@
-module CapistranoRailsConsole
-  VERSION = "0.5.0"
-end
+require "capistrano_rails_console/version"
