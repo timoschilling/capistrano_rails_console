@@ -1,4 +1,4 @@
-# Capistrano Rails Console
+# Capistrano Rails Console [![Build Status](https://travis-ci.org/timoschilling/capistrano_rails_console.png?branch=master)](https://travis-ci.org/timoschilling/capistrano_rails_console)
 
 Open a rails console the first app server.
 
