@@ -24,6 +24,11 @@ describe CapistranoRailsConsole::Rails do
   end
 
   describe ".console_command" do
+    it "should call .version" do
+      described_class.should_receive(:version).once
+      described_class.console_command
+    end
+
     it "should return the Rails 2 command" do
       described_class.stub :version => 2
       described_class.console_command.should eq "./script/console %s"
