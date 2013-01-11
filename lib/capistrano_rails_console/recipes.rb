@@ -20,5 +20,5 @@ module CapistranoRailsConsole
 end
 
 if Capistrano::Configuration.instance
-  CapistranoRailsConsole.load_into(Capistrano::Configuration.instance)
+  CapistranoRailsConsole::Recipes.load_into(Capistrano::Configuration.instance)
 end
