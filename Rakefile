@@ -12,7 +12,7 @@ namespace :test do
   task :integration do
     puts
     puts "Start integration test"
-    unless `cap -T` =~ /rails:console/
+    unless `cap -T` =~ /cap\ rails:console/
       puts "Integration test fails!"
       exit!
     else
