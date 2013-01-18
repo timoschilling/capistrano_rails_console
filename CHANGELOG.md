@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.5.3
+
+* don't require username or port [@spikegrobstein, #2]
+
 ## v0.5.2
 
 * test integration in `cap`
