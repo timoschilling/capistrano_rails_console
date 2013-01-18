@@ -11,7 +11,16 @@ module CapistranoRailsConsole
             hostname = find_servers_for_task(current_task).first
 
             console_command = CapistranoRailsConsole::Rails.console_command % rails_env
-            run_locally "ssh -l #{user} #{hostname} -p #{port} -t 'cd #{current_path} && #{console_command}'"
+            local_ssh_command = ['ssh']
+            local_ssh_command << "-l #{ user }" if fetch(:user, nil)
+            local_ssh_command << hostname
+            local_ssh_command << "-p #{ port }" if fetch(:port, nil)
+            local_ssh_command << '-t'
+            local_ssh_command << "'cd #{ current_path } && #{ console_command }'"
+
+            local_ssh_command = local_ssh_command.join(' ')
+
+            run_locally(local_ssh_command)
           end
         end
       end
